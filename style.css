@@ -1,5 +1,5 @@
 .heading {
-    font-size: 23px;
+    font-size: 21px;
     margin: 0px;
     width: 100%;
 }
@@ -11,10 +11,6 @@
 
 body {
     background-size: cover;
-}
-
-.song_name {
-    float: left;
 }
 
 #name_song {
