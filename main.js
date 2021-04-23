@@ -5,6 +5,7 @@ leftWristY = ""
 rightWristX = ""
 rightWristY = ""
 scoreleftWrist = 0
+scorerightWrist = 0
 status_song_1 = ""
 status_song_2 = ""
 
@@ -42,6 +43,8 @@ function gotPoses(results) {
 
         scoreleftWrist = results[0].pose.keypoints[9].score
         console.log(scoreleftWrist);
+        scorerightWrist = results[0].pose.keypoints[10].score
+        console.log(scorerightWrist);
     }
 }
 
@@ -57,6 +60,18 @@ function draw() {
         if (status_song_1 = false) {
            song_1.play()
            document.getElementById("song_name").innerHTML = "Harry Potter Theme Song"
+        }
+    }
+    song_2.isPlaying()
+    status_song_2 = song_2.isPlaying()
+    stroke("red")
+    fill("red")
+    if (scorerightWrist > 0.2) {
+        circle(rightWristX, rightWristY, 20)
+        song_1.stop()
+        if (status_song_2 = false) {
+            song_2.play()
+            document.getElementById("song_name").innerHTML = "Believer by Imagine Dragons"
         }
     }
 }
